@@ -35,9 +35,16 @@ export default {
   }),
   methods: {
     async onSubmit() {
-      await this.$store.dispatch('signIn', this.user);
+      try {
+        await this.$store.dispatch('signIn', this.user);
 
-      this.$router.push({ name: 'Managers' });
+        this.$router.push({ name: 'Managers' });
+        this.error.message = '';
+      } catch (err) {
+        if (err.request.status == 401) {
+          this.error.message = 'Email or password is wrong!';
+        }
+      }
     }
   }
 };
