@@ -31,9 +31,7 @@ export default {
   }),
   methods: {
     async onSubmit() {
-      const { data } = await this.$http.post('auth/login', this.user);
-
-      localStorage.setItem('access_token', data.access_token);
+      await this.$store.dispatch('signIn', this.user);
 
       this.$router.push({ name: 'Managers' });
     }
