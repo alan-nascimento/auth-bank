@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-bytebank">
-    <a class="navbar-brand" href="#">ByteBank</a>
+    <a class="navbar-brand" href="#">AuthBank</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -42,18 +42,15 @@
 </template>
 
 <script>
+import { logoutMixin } from '@/mixins';
+
 export default {
-  methods: {
-    logout() {
-      this.$store.commit('SIGN_OUT_USER');
-      this.$router.push({ name: 'Login' });
-    }
-  },
   computed: {
     isUserLogged() {
       return !!this.$store.state.token;
     }
-  }
+  },
+  mixins: [logoutMixin]
 };
 </script>
 

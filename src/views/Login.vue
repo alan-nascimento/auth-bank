@@ -12,6 +12,7 @@
         <input type="password" class="form-control" v-model="user.password" />
       </div>
 
+      <p class="alert alert-danger" v-if="error.message">{{ error.message }}</p>
       <button class="btn btn-primary">Enter</button>
 
       <router-link :to="{ name: 'Register' }">
@@ -27,6 +28,9 @@ export default {
     user: {
       email: '',
       password: ''
+    },
+    error: {
+      message: ''
     }
   }),
   methods: {
