@@ -18,9 +18,13 @@ const routes: Array<RouteConfig> = [
     component: Managers,
   },
   {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/Login.vue'),
+  },
+  {
     path: '/register',
     name: 'Register',
-    // component: Register,
     component: () => import('@/views/Register.vue'),
   },
 ];

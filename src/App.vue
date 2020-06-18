@@ -23,12 +23,26 @@
               Managers
             </router-link>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" @click.prevent="logout">Logout</a>
+          </li>
         </ul>
       </div>
     </nav>
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    logout() {
+      localStorage.removeItem('access_token');
+      this.$router.push({ name: 'Login' });
+    },
+  },
+};
+</script>
 
 <style>
 .navbar {
