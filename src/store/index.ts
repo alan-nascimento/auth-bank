@@ -34,4 +34,7 @@ export default new Vuex.Store({
   },
   modules: {
   },
+  getters: {
+    isUserLogged: state => !!state.token
+  }
 });

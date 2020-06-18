@@ -42,13 +42,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import { logoutMixin } from '@/mixins';
 
 export default {
   computed: {
-    isUserLogged() {
-      return !!this.$store.state.token;
-    }
+    ...mapGetters(['isUserLogged'])
   },
   mixins: [logoutMixin]
 };
