@@ -22,8 +22,6 @@
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
   data: () => ({
     user: {
@@ -34,10 +32,7 @@ export default {
   }),
   methods: {
     async onSubmit() {
-      const { data } = await axios.post(
-        'http://localhost:8000/auth/register',
-        this.user
-      );
+      const { data } = await this.$http.post('auth/register', this.user);
 
       this.$router.push({ name: 'Login' });
     }

@@ -22,8 +22,6 @@
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
   data: () => ({
     user: {
@@ -33,10 +31,7 @@ export default {
   }),
   methods: {
     async onSubmit() {
-      const { data } = await axios.post(
-        'http://localhost:8000/auth/login',
-        this.user
-      );
+      const { data } = await this.$http.post('auth/login', this.user);
 
       localStorage.setItem('access_token', data.access_token);
 
