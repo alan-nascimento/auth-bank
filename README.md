@@ -2,11 +2,10 @@
 
 
 [![Author](https://img.shields.io/badge/author/alan-nascimento-EE4D64?style=flat-square)](https://github.com/alan-nascimento)
-[![Languages](https://img.shields.io/github/languages/count/alan-nascimento/auth-bank?color=%23EE4D64&style=flat-square)](#)
+[![Languages](https://img.shields.io/github/languages/count/alan-nascimento/auth-bank?color=%23EE4D64&style=flat-square)](https://github.com/alan-nascimento)
 
 > A simple application to study how VueJS works. The main objective of this project was to create and authenticate users, protect routes and get to know VueX, based on an application that makes it possible to list the managers of a bank from a mocked REST API in the project.
 
----
 
 ### Technologies
 
@@ -45,5 +44,3 @@ $ yarn serve
 
 Released in 2020.
 This project is under the MIT license.
-
-Made with by [Alan Nascimento](https://github.com/alan-nascimento)
