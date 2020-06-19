@@ -25,7 +25,7 @@ $ cd auth-bank/backend
 $ yarn
 
 # Start the backend server
-$ yarn start-auth
+$ yarn start
 
 # Go into frontend project
 $ cd ..
