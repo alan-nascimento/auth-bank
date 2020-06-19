@@ -28,7 +28,7 @@ function verifyToken(token) {
 function isAuthenticated({ email, password }) {
   return (
     userdb.users.findIndex(
-      (user) => user.email === email && user.password === password
+      user => user.email === email && user.password === password
     ) !== -1
   );
 }
@@ -60,18 +60,6 @@ server.post('/auth/register', (req, res) => {
 
     data.users.push({ id: last_item_id + 1, email, password, name });
 
-    let writeData = fs.writeFile(
-      './users.json',
-      JSON.stringify(data),
-      (err, result) => {
-        if (err) {
-          const status = 401;
-          const message = err;
-          res.status(status).json({ status, message });
-          return;
-        }
-      }
-    );
     userdb = data;
   });
 
@@ -96,8 +84,8 @@ server.post('/auth/login', (req, res) => {
 
   const user = {
     ...userdb.users.find(
-      (user) => user.email === email && user.password === password
-    ),
+      user => user.email === email && user.password === password
+    )
   };
 
   delete user.password;
